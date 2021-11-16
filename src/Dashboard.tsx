@@ -1,12 +1,13 @@
 
 import { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
+import { Button, Card, CardBody, CardFooter, CardText, CardTitle, Col, Container, Navbar, NavbarBrand, Row } from "reactstrap";
 import {
     IoSchoolOutline,
     IoMan,
     IoSettings,
     IoWomanOutline,
 } from "react-icons/io5";
+import axios from "axios";
 
 interface MyState {
 students: []
@@ -21,7 +22,7 @@ export class Dashboard extends Component<{}, MyState> {
             componentDidMount (){
                 axios.get('http://localhost:9090/list')
                 .then(res => {
-                    const student = res.data
+                    const students = res.data
 
                     this.setState({students})
                 })
@@ -112,12 +113,16 @@ function renderStudent(st): any {
                                     <span> Second Year</span>
                                 </Col>
                                 <Col sm="4" className="text-center">
-                                    <span className="font-weight-bold">Age </span>
-                                    <span>{st.age}</span>
+                                    <span className="font-weight-bold">idNumber </span>
+                                    <span>{st.idNumber}</span>
                                 </Col>
                                 <Col sm="4" className="text-center">
-                                    <span className="font-weight-bold">Teacher </span>
-                                    <span>{st.teacher}</span>
+                                    <span className="font-weight-bold">Email </span>
+                                    <span>{st.email}</span>
+                                </Col>
+                                <Col sm="4" className="text-center">
+                                    <span className="font-weight-bold">Age </span>
+                                    <span>{st.age}</span>
                                 </Col>
                             </Row>
                         </CardBody>
