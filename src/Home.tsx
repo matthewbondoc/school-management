@@ -1,3 +1,8 @@
+import { Component } from "react";
+import { render } from "react-dom";
+import { FaSchool } from "react-icons/fa";
+import { Navbar, NavbarBrand } from "reactstrap";
+
 interface MyHome {
     isOpen : boolean;
     students: [];
@@ -8,14 +13,14 @@ export class Home extends Component<{}, MyHome> {
         isOpen : false,
         students: []
     };
-}
+
 
 
 toggle = () => {
     this.setState((prevState) => ({ isOpen: !prevState.isOpen}));
 }
 
-render (); {
+render () {
     return (
         <div>
         <Navbar color="dark">
@@ -26,4 +31,5 @@ render (); {
         </Navbar>
     </div>
     );
+  }
 }
