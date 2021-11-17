@@ -7,14 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Home } from './Home';
 import { Dashboard } from './Dashboard';
 
-
-ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
 ReactDOM.render(
   <React.StrictMode>
     <Dashboard />
