@@ -1,9 +1,11 @@
+import axios from "axios";
 import React from "react"
 import { Component } from "react";
 import {
     Button,
     Col,
     Form,
+    Label,
     Modal,
     ModalBody,
     ModalHeader,
@@ -30,12 +32,10 @@ export class CreationModal extends Component <MyProps> {
         const student = {
             firstName : data.get("firstName"),
             lastName : data.get("lastName"),
-            class : data.get("class"),
+            yearLevel : data.get("yearLevel"),
             idNumber : data.get("idNumber"),
             email : data.get("email"),
             age : data.get("age"),
-
-
         }
 
         axios.post("http://localhost:9090/add", student) 
@@ -48,7 +48,7 @@ render () {
 
 return (<Modal isOpen = {this.props.isOpen} toggle = {this.props.toggle}>
     <ModalHeader toggle = {this.props.toggle}>
-            Adding new wise Student 
+            Add Student
     </ModalHeader>
 
     <ModalBody>
@@ -57,7 +57,7 @@ return (<Modal isOpen = {this.props.isOpen} toggle = {this.props.toggle}>
         
             <Row>
     <Col>
-    <Label> FirstName </Label>
+    <Label> First Name: </Label>
     </Col>
 
 
@@ -72,7 +72,7 @@ return (<Modal isOpen = {this.props.isOpen} toggle = {this.props.toggle}>
 
         <Row>
     <Col>
-    <Label> LastName </Label>
+    <Label> Last Name: </Label>
     </Col>
 
     <Col>
@@ -85,12 +85,12 @@ return (<Modal isOpen = {this.props.isOpen} toggle = {this.props.toggle}>
 
         <Row>
 <Col>
-<Label> Class </Label>
+<Label> Year Level: </Label>
 </Col>
 
 
 <Col>
-<input id = "class" name = "class" type = "text" />
+<input id = "yearLevel" name = "yearLevel" type = "text" />
 </Col> 
         </Row>
 
@@ -100,7 +100,7 @@ return (<Modal isOpen = {this.props.isOpen} toggle = {this.props.toggle}>
 
         <Row>
 <Col>
-<Label> IdNumber </Label>
+<Label> Student Number: </Label>
 </Col>
 
 
@@ -115,7 +115,7 @@ return (<Modal isOpen = {this.props.isOpen} toggle = {this.props.toggle}>
 
         <Row>
 <Col>
-<Label> Email </Label>
+<Label> Email: </Label>
 </Col>
 
 
@@ -130,7 +130,7 @@ return (<Modal isOpen = {this.props.isOpen} toggle = {this.props.toggle}>
 
         <Row>
 <Col>
-<Label> Age </Label>
+<Label> Age: </Label>
 </Col>
 
 
@@ -140,22 +140,13 @@ return (<Modal isOpen = {this.props.isOpen} toggle = {this.props.toggle}>
         </Row>
 
 
-<Button color = "primary" > Create New Student </Button>
-
-
-    </Form>,
+<Button color = "primary" > Add New Student </Button>
+    </Form>
 
 </ModalBody>
 
-
-
-
 </Modal>);
 
-
-
 }
-
-
 
 }

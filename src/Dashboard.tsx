@@ -11,6 +11,7 @@ import{
     FaSchool
 }from "react-icons/fa"
 import axios from "axios";
+import { CreationModal } from "./CreationModal";
 
 interface MyState {
 
@@ -124,11 +125,11 @@ function renderStudent(st): any {
                         <CardBody>
                             <Row>
                                 <Col sm="4" className="text-center">
-                                    <span className="font-weight-bold">Class: </span>
-                                    <span> Second Year</span>
+                                    <span className="font-weight-bold">Year Level: </span>
+                                    <span>{st.yearLevel}</span>
                                 </Col>
                                 <Col sm="4" className="text-center">
-                                    <span className="font-weight-bold">idNumber: </span>
+                                    <span className="font-weight-bold">Student Number: </span>
                                     <span>{st.idNumber}</span>
                                 </Col>
                                 <Col sm="4" className="text-center">
