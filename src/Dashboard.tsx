@@ -7,6 +7,9 @@ import {
     IoSettings,
     IoWomanOutline,
 } from "react-icons/io5";
+import{
+    FaSchool
+}from "react-icons/fa"
 import axios from "axios";
 
 interface MyState {
@@ -31,10 +34,10 @@ export class Dashboard extends Component<{}, MyState> {
     render(){
         return(
             <div>
-                <Navbar color="dark" light mb-2>
+                <Navbar color = "danger" light mb-2>
                     <NavbarBrand className="text-white">
-                        <IoSchoolOutline className="font-size-xxl"/>
-                        <span className="font-size-l ml-3"> Excellence University</span>
+                        <FaSchool className="font-size-xxl"/>
+                        <span className="font-size-l ml-2"> Excellence University</span>
                     </NavbarBrand>
                 </Navbar>
 
@@ -109,19 +112,19 @@ function renderStudent(st): any {
                         <CardBody>
                             <Row>
                                 <Col sm="4" className="text-center">
-                                    <span className="font-weight-bold">Class </span>
+                                    <span className="font-weight-bold">Class: </span>
                                     <span> Second Year</span>
                                 </Col>
                                 <Col sm="4" className="text-center">
-                                    <span className="font-weight-bold">idNumber </span>
+                                    <span className="font-weight-bold">idNumber: </span>
                                     <span>{st.idNumber}</span>
                                 </Col>
                                 <Col sm="4" className="text-center">
-                                    <span className="font-weight-bold">Email </span>
+                                    <span className="font-weight-bold">Email: </span>
                                     <span>{st.email}</span>
                                 </Col>
                                 <Col sm="4" className="text-center">
-                                    <span className="font-weight-bold">Age </span>
+                                    <span className="font-weight-bold">Age: </span>
                                     <span>{st.age}</span>
                                 </Col>
                             </Row>
@@ -130,12 +133,12 @@ function renderStudent(st): any {
                             <Row>
                                 <Col sm-6>
                                     <Button block outline color="primary">
-                                        Edit
+                                        Edit Student
                                     </Button>
                                 </Col>
                                 <Col sm-6>
                                     <Button block outline color="danger" onClick={() => deleteStudent(st.id)}>
-                                        Delete
+                                        Delete Student
                                     </Button>
                                 </Col>
                             </Row>
