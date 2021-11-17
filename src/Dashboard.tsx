@@ -13,13 +13,16 @@ import{
 import axios from "axios";
 
 interface MyState {
-students: []
+
+isOpen : boolean;
+students: [];
 }
 
 export class Dashboard extends Component<{}, MyState> {
 
     state : MyState = {
-        students: [],
+        isOpen : false,
+        students: []
     };
 
             componentDidMount (){
@@ -30,6 +33,12 @@ export class Dashboard extends Component<{}, MyState> {
                     this.setState({students})
                 })
             }
+
+toggle = () => {
+
+this.setState((prevState) => ({ isOpen: !prevState.isOpen}));
+
+}
 
     render(){
         return(
@@ -81,10 +90,13 @@ export class Dashboard extends Component<{}, MyState> {
                     </Row>
                 </Container>
 
+                    <CreationModal isOpen = {this.state.isOpen} toggle = {this.toggle}> </CreationModal>
+                                        
+
                 <Container className="mt-4">
                     <Row>
                         <Col sm="12">
-                            <Button block color="success">
+                            <Button block color="success" onClick = {this.toggle}>
                                 <span className="font-size-l">Add New Student</span>
                             </Button>
                         </Col>
