@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Home } from './Home';
 import { Dashboard } from './Dashboard';
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <Home />
     <Dashboard />
   </React.StrictMode>,
   document.getElementById('root')
