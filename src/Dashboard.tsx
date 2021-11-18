@@ -44,7 +44,7 @@ this.setState((prevState) => ({ isOpen: !prevState.isOpen}));
     render(){
         return(
             <div>
-                <Navbar color = "dark" light mb-2>
+                <Navbar color = "danger" light mb-2>
                     <NavbarBrand className="text-white">
                         <FaSchool className="font-size-xxl"/>
                         <span className="font-size-l ml-2"> Excellence University</span>
